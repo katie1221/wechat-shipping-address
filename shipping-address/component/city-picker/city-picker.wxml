@@ -1,0 +1,11 @@
+<!--component/msg-modal/msg-modal.wxml-->
+<!--这是自定义组件的内部WXML结构-->
+<view class="section" wx:if="{{visible}}">
+    <picker mode="multiSelector" value="{{multiIndex}}" range="{{multiCityArray}}" bindcolumnchange="_multiPickerColumnChange" bindchange="_multiPickerChange">
+        <view class="picker">
+            {{multiCityArray[0][multiIndex[0]]}} {{multiCityArray[1][multiIndex[1]]}} {{multiCityArray[2][multiIndex[2]]}}
+        </view>
+    </picker>
+</view>
+<!--在组件模板中可以提供一个 <slot> 节点，用于承载组件引用时提供的子节点。-->
+	

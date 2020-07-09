@@ -1,0 +1,39 @@
+<!--pages/shipping-address/shipping-address.wxml-->
+<view class="main">
+    <view class="row">
+        <button type="primary" bindtap = "getWechatAddress">获取微信收货地址</button>
+    </view>
+    <view class="row">
+        <view class="title">联系人</view>
+        <view class="text">
+            <input type="text" class="inp" value="{{concatPerson}}" data-type="concatPerson" placeholder="请输入联系人姓名" bindblur="bindinputblur"/>
+        </view>
+    </view>
+    <view class="row">
+        <view class="title">手机号</view>
+        <view class="text">
+            <input type="text" class="inp" value="{{phone}}" data-type="phone" placeholder="请输入手机号" bindblur="bindinputblur"/>
+        </view>
+    </view>
+    <view class="row">
+        <view class="title">选择地区</view>
+        <view class="text">
+            <city-picker multiCityArray="{{multiCityArray}}" cityData="{{cityData}}" multiIndex="{{multiIndex}}" visible="{{visible}}" bind:multiPickerColumnChange="_multiPickerColumnChange" bind:multiPickerChange="_multiPickerChange"></city-picker>
+            <!-- <picker mode="multiSelector" value="{{multiIndex}}" range="{{multiCityArray}}" bindcolumnchange="bindMultiPickerColumnChange" bindchange="bindMultiPickerChange">
+                <view class="picker">
+                    {{multiCityArray[0][multiIndex[0]]}}，{{multiCityArray[1][multiIndex[1]]}}，{{multiCityArray[2][multiIndex[2]]}}
+                </view>
+            </picker> -->
+        </view>
+    </view>
+    <view class="row">
+        <view class="title">详细地址</view>
+        <view class="text">
+            <input type="text" class="inp" value="{{address}}" data-type="address" placeholder="请输入详细地址" bindblur="bindinputblur"/>
+        </view>
+    </view>
+    
+    <view class="row">
+        <button type="primary" bindtap = "save">保存</button>
+    </view>
+</view>
